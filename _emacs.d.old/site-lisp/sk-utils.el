@@ -127,9 +127,16 @@
           (set-buffer-modified-p nil))))))
 
 (defun sk/find-init-file ()
-  "Open init file for editing."
+  "Open `user-init-file'."
   (interactive)
-  (find-file user-init-file))
+  (select-window (display-buffer (find-file-noselect user-init-file)
+		  '(display-buffer-reuse-window (inihibit-same-window)))))
+
+(defun sk/disable-all-themes ()
+  "disable all active themes."
+  (interactive)
+  (dolist (i custom-enabled-themes)
+    (disable-theme i)))
 
 (defun sk/describe-symbol-at-point ()
   "DWIM. Just show symbol at point without showing a prompt."
