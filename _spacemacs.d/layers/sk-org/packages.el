@@ -1,6 +1,6 @@
 (setq sk-org-packages
-      '((ob-ipython :location local)
-        org
+      '(org
+        ;; (ob-ipython :location local)
         ox-reveal))
 
 
@@ -37,7 +37,7 @@
 
   ;; enable man links
   (with-eval-after-load 'org
-    (require 'org-man))
+    (require 'ol-man))
 
 
   ;; dont prompt me to confirm everytime I want to evaluate a block

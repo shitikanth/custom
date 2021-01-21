@@ -6,7 +6,8 @@
 (defun sk-dired/init-dired+ ()
   (use-package dired+
     :config
-    (add-to-list 'font-lock-maximum-decoration '(dired-mode . 1))))
+    (setq font-lock-maximum-decoration '((dired-mode . 1))))
+  )
 
 (defun sk-dired/post-init-dired ()
   (add-hook 'dired-mode-hook 'sk/dired-mode-setup)
